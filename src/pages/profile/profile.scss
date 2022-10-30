@@ -1,0 +1,128 @@
+@import "../../style.scss";
+
+.profile {
+  @include themify($themes) {
+    background-color: themed("bgSoft");
+
+    .images {
+      height: 300px;
+      position: relative;
+      padding: 0 25px;
+      @include mobile {
+        padding: 0;
+      }
+
+      .cover {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+      }
+
+      .profilePic {
+        border-radius: 50%;
+        height: 200px;
+        left: 0;
+        margin: auto;
+        object-fit: cover;
+        position: absolute;
+        right: 0;
+        top: 200px;
+        width: 200px;
+      }
+    }
+    .profileContainer {
+      padding: 20px 25px;
+
+      @include mobile {
+        padding: 10px;
+      }
+
+      @include tablet {
+        padding: 20px;
+      }
+    }
+
+    .uInfo {
+      -moz-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+      -webkit-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+      align-items: center;
+      background-color: themed("bg");
+      border-radius: 20px;
+      box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+      color: themed("textColor");
+      display: flex;
+      height: 180px;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      padding: 50px;
+
+      @include mobile {
+        flex-direction: column;
+        height: 30vh;
+        padding: 20px;
+        margin-top: 100px;
+      }
+    }
+
+    .left {
+      display: flex;
+      flex: 1;
+      gap: 10px;
+
+      @include tablet {
+        flex-wrap: wrap;
+      }
+
+      a {
+        color: themed("textColorSoft");
+      }
+    }
+    .center {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+
+      span {
+        font-size: 30px;
+        font-weight: 500;
+      }
+
+      .info {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        .item {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          color: themed("textColorSoft");
+
+          span {
+            font-size: 12px;
+          }
+        }
+      }
+      button {
+        background-color: #5271ff;
+        border-radius: 5px;
+        border: none;
+        color: white;
+        cursor: pointer;
+        padding: 10px 20px;
+      }
+    }
+    .right {
+      align-items: center;
+      display: flex;
+      flex: 1;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+  }
+}
